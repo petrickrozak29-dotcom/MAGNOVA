@@ -1,0 +1,61 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Backend - Install & Test
+        working-directory: ./backend
+        run: |
+          npm ci
+          npm test -- --runInBand
+
+      - name: Frontend - Install & Build
+        working-directory: ./frontend
+        run: |
+          npm ci
+          npm run build
+
+      - name: Install Playwright browsers
+        working-directory: ./frontend
+        run: |
+          npx playwright install --with-deps
+
+      - name: Start backend and frontend for E2E
+        run: |
+          # Start backend
+          cd backend
+          npm ci
+          npm run start &> backend.log &
+
+          # Start frontend
+          cd ../frontend
+          npm ci
+          PORT=3000 npm run start &> frontend.log &
+
+          # Wait for both services to be ready
+          npx wait-on http://127.0.0.1:4000/api/health http://127.0.0.1:3000
+          sleep 2
+
+      - name: Run Playwright E2E
+        working-directory: ./frontend
+        run: |
+          npx playwright test --config=playwright.config.ts --reporter=list
+
+      - name: E2E Smoke (scripts)
+        run: |
+          npm install --prefix . node-fetch@3
+          node scripts/e2e-smoke.js
