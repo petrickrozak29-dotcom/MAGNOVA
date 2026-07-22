@@ -3,8 +3,8 @@ import type { Metadata } from 'next';
 import { AuthProvider } from '../contexts/AuthContext';
 
 export const metadata: Metadata = {
-  title: 'Future Magelang',
-  description: 'Smart Tourism & Digital City Portal Magelang',
+  title: 'MAGNOVA',
+  description: 'Magelang Innovation Network for Tourism and Creative Economy',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -443,7 +443,7 @@ export default function DeveloperPage() {
             <BarChart3 className="h-4 w-4" />
             Dashboard Developer
           </p>
-          <h1 className="mt-3 text-4xl font-bold">Kelola Future Magelang</h1>
+          <h1 className="mt-3 text-4xl font-bold">Kelola MAGNOVA</h1>
           <p className="mt-3 text-slate-300">{user?.email}</p>
         </section>
 

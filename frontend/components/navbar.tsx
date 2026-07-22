@@ -48,7 +48,7 @@ export default function Navbar() {
   return (
     <header className="site-header">
       <div className="nav-wrap">
-        <Link href="/" className="brand" aria-label="Future Magelang">Future <span>Magelang</span></Link>
+        <Link href="/" className="brand" aria-label="MAGNOVA">MAGNOVA</Link>
         <button className="mobile-toggle" onClick={() => setMobileOpen((value) => !value)} aria-label="Buka navigasi">
           {mobileOpen ? <X /> : <Menu />}
         </button>

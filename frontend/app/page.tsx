@@ -85,10 +85,10 @@ export default function Home() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
             className="hero-content"
-          >
+          > 
             <p className="eyebrow"><Sparkles /> Transformasi Digital Magelang</p>
-            <h1>FUTURE<br /><span>MAGELANG</span></h1>
-            <p className="hero-copy">Smart Tourism & Digital City Platform yang menghadirkan pengalaman unik menjelajahi Magelang dengan teknologi digital.</p>
+            <h1>MAGNOVA<br /><span>MAGELANG</span></h1>
+            <p className="hero-copy">Magelang Innovation Network for Tourism and Creative Economy</p>
             <p className="hero-subcopy">Explore Heritage, Culture, and City Experiences</p>
             <div className="hero-actions">
               <Link href="/wisata" className="primary-button">Mulai Jelajah <ArrowRight /></Link>

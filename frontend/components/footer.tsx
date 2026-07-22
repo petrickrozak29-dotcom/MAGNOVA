@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="site-footer">
       <div className="footer-grid">
         <div className="footer-about">
-          <Link href="/" className="footer-brand">FUTURE <span>MAGELANG</span></Link>
+          <Link href="/" className="footer-brand">MAGNOVA</Link>
           <p>Smart Tourism & Digital City Platform untuk pengalaman menjelajahi Magelang dengan teknologi digital.</p>
         </div>
         <div>
@@ -31,7 +31,7 @@ export default function Footer() {
           <a href="mailto:developermagelang45@gmail.com"><Mail /> developermagelang45@gmail.com</a>
         </div>
       </div>
-      <div className="footer-bottom">© 2026 Future Magelang. All rights reserved.</div>
+      <div className="footer-bottom">&copy; 2026 MAGNOVA. All rights reserved.</div>
     </footer>
   );
 }
